@@ -12,12 +12,13 @@ const createWindow = () => {
       contextIsolation: true,
       worldSafeExecuteJavaScript: true,
       preload: path.join(__dirname, 'preload.js'),
+      backgroundColor: "gray",
     },
     fullscreen: true,
   });
   mainWindow.loadFile('index.html');
 };
-
+  
 if (isDev) {
   require('electron-reload')(__dirname, {
     electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),

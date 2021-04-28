@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import { Grid } from 'gymnast'
+import { Card } from '@material-ui/core'
+
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -45,23 +46,12 @@ const MyMapBox = () => {
     return () => map.remove();
   }, []);
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={3}>
-          <Box
-            className='leftPane'
-            borderRadius={16}
-            borderColor='"primary.main"'
-          >
-            <img src='./download (1).png' />
-          </Box>
+        <Grid>
+          <div className="sidebar">
+            Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+          </div>
+          <Grid size={9} margin="2" className="map-container" ref={mapContainer}/>
         </Grid>
-        <br />
-        <Box item xs={9} borderRadius={16} borderColor='"primary.main"'>
-          <div xs={9} className='map-container' ref={mapContainer} />
-        </Box>
-      </Grid>
-    </div>
   );
 };
 

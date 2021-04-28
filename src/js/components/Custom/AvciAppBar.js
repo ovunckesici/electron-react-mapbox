@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomAppBar() {
+export default function AvciAppBar() {
   const classes = useStyles();
 
   return (
@@ -35,9 +35,8 @@ export default function CustomAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' className={classes.title}>
-            News
+            Avcı
           </Typography>
-          <Button color='inherit'>Login</Button>
         </Toolbar>
       </AppBar>
     </div>
