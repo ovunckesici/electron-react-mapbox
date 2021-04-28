@@ -1,0 +1,34 @@
+.map-container {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  left: 500px;
+  bottom: 300px;
+  border: 5px;
+}
+
+.leftPane {
+  position: absolute;
+  top: 100px;
+  width: 300px;
+  right: 0;
+  left: 50px;
+  bottom: 300px;
+  border: 6px solid darkblue;
+}
+
+br {
+  position: relative;
+  top: 100px;
+  border: none;
+  height: 500px;
+  background: black;
+  margin-bottom: 50px;
+}
+
+.bottomPane {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: tomato;
+  color: white;
+}
