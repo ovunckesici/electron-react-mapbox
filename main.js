@@ -1,6 +1,8 @@
 const { app, ipcMain, Notification } = require('electron');
 const { BrowserWindow } = require('electron/main');
 const path = require('path');
+const fs = require('fs');
+var net = require('net');
 
 const isDev = !app.isPackaged;
 
@@ -12,13 +14,13 @@ const createWindow = () => {
       contextIsolation: true,
       worldSafeExecuteJavaScript: true,
       preload: path.join(__dirname, 'preload.js'),
-      backgroundColor: "gray",
+      backgroundColor: 'gray',
     },
     fullscreen: true,
   });
   mainWindow.loadFile('index.html');
 };
-  
+
 if (isDev) {
   require('electron-reload')(__dirname, {
     electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
